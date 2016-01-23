@@ -4,7 +4,6 @@ class WelcomeController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => :auth_callback
 
   def index
-
   end
 
   def auth_callback
@@ -19,5 +18,9 @@ class WelcomeController < ApplicationController
     session[:current_user]=nil
     sleep 3
     redirect_to root_url
+  end
+
+  def show
+
   end
 end
