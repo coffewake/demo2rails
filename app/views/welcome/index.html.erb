@@ -1,14 +1,24 @@
-<h1>Welcome#index</h1>
-<%= link_to image_tag("http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_noborder.png"), '/auth/steam' %>
-<% if session.key? :current_user %>
-<h3>Current user:</h3>
-<%= image_tag session[:current_user][:image] %>
-<p><%= session[:current_user][:nickname] %></p>
-<p><%= session[:current_user][:uid] %></p>
-<% end %>
 
+<h1>welcome page</h1>
+<body>
+<div class="row">
+	<aside class="span4">
+		<% if session.key? :current_user %>
+		<h3>Current user:</h3>
+		<%= image_tag session[:current_user][:image] %>
+		<h3><%= session[:current_user][:avatar] %></h3>
+		<h3><%= session[:current_user][:nickname] %></h3>
+<%= link_to "Logout", logout_path , method: :delete , class: "btn btn-large btn-primary" %>
+
+		<% else %>
+		<%= link_to image_tag("http://cdn.steamcommunity.com/public/images/signinthroughsteam/sits_large_noborder.png"), '/auth/steam' %>
+		<% end %>
+		</aside>
+</div>
+
+<div>
 <ul>
-<% @matchlist.each do |match| %>
-<li><%= Date.strptime(match['start_time'].to_s, '%s').to_formatted_s(:rfc822) %> - <%= match['match_id'] %></li>
-<% end %>
+
 </ul>
+</div>
+</body>
