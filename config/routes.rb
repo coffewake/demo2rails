@@ -1,6 +1,6 @@
 Demo2rails::Application.routes.draw do
   root 'welcome#index'
-  get 'welcome/index'
+  match '/index', to: 'welcome#index', via: 'get'
   post 'auth/steam/callback' => 'welcome#auth_callback'
   delete '/logout', to: 'welcome#destroy'
   # The priority is based upon order of creation: first created -> highest priority.

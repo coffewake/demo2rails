@@ -1,0 +1,6 @@
+<% if session.key? :current_user %>
+	<%= image_tag session[:current_user][:image] %>
+	<h3><%= session[:current_user][:avatar] %></h3>
+	
+		
+		<% end %>
