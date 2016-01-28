@@ -5,7 +5,9 @@ require 'spec_helper'
 
 	before {visit index_path}
 
-	it {should have_content('welcome')}
-	it {should have_css("img[src*='logo']")}
+	
+	it {should have_title("Street League")}
+	it {should have_selector('li',text:'Nick: Killer Josh')}
+
 	end
 

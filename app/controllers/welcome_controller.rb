@@ -9,7 +9,10 @@ class WelcomeController < ApplicationController
   def auth_callback
     auth = request.env['omniauth.auth']
     session[:current_user] = { :nickname => auth.info['nickname'],
+                               :name => auth.info['name'],
+                               :location => auth.info['location'],
                                :image => auth.extra.raw_info['avatarfull'],
+                               :profileurl => auth.extra.raw_info['profileurl'],
                                :uid => auth.uid }
     redirect_to root_url
   end

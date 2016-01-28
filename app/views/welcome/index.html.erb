@@ -11,6 +11,14 @@
 		<div class="span4">
             <% if !session.key? :current_user %>
 	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+	<%else%>
+	<ul>
+		<li><b>Nick: </b> <%= session[:current_user][:nickname] %></li>
+        <li><b>Real Name: </b> <%= session[:current_user][:name] %></li>
+        <li><b>Location: </b><%= session[:current_user][:location] %></li>
+        <li><b>Profile URL: </b><%= session[:current_user][:profileurl] %></li>
+        <li><b>Steam UID: </b><%= session[:current_user][:uid] %></li>
+	</ul>
 	<%end%>
         </div>
    		
