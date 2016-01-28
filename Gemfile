@@ -18,11 +18,12 @@ gem 'jbuilder', '1.0.2'
 gem 'omniauth-steam'
 gem 'figaro'
 gem 'high_voltage'
-gem 'sqlite3'
+
 
 
 group :development do
   gem 'rspec-rails', '2.13.1'
+  gem 'sqlite3'
 end
 
 group :test do
