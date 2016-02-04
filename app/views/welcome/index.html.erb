@@ -18,6 +18,36 @@
         <li><b>Location: </b><%= session[:current_user][:location] %></li>
         <li><b>Profile URL: </b><%= session[:current_user][:profileurl] %></li>
         <li><b>Steam UID: </b><%= session[:current_user][:uid] %></li>
+        	<a href="#myModal" role="button" class="btn" data-toggle="modal">Создать игру</a>
+        <!-- Modal -->
+				<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				  <div class="modal-header">
+				    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				    <h3 id="myModalLabel">Параметры игры</h3>
+				  </div>
+				  <div class="modal-body">
+				    
+				    <h4>Количество игроков: </h4>
+				    <div class="btn-group" data-toggle="buttons-radio">
+				    	
+					  <button type="button" class="btn btn-primary">1x1</button>
+					  <button type="button" class="btn btn-primary">2x2</button>
+					  <button type="button" class="btn btn-primary">5x5</button>
+					</div>
+					<h4>Карта: </h4>
+					<div class="btn-group" data-toggle="buttons-radio"
+					 <button type="button" class="btn btn-primary">de_mirage</button>
+					  <button type="button" class="btn btn-primary">de_season</button>
+					  <button type="button" class="btn btn-primary">de_inferno</button>
+					  <button type="button" class="btn btn-primary">de_dust2</button>
+					  <button type="button" class="btn btn-primary">de_cache</button>
+					  </div>
+				  </div>
+				  <div class="modal-footer">
+				    <button class="btn" data-dismiss="modal" aria-hidden="true">Отмена</button>
+				    <button class="btn btn-primary">Добавить заявку</button>
+				  </div>
+				</div>
 	</ul>
 	<%end%>
         </div>

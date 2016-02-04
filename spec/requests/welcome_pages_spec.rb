@@ -3,11 +3,11 @@ require 'spec_helper'
 	describe "welcome page" do
 	subject {page}
 
-	before {visit index_path}
+	before {visit root_path}
 
 	
 	it {should have_title("Street League")}
-	it {should have_selector('li',text:'Nick: Killer Josh')}
+	it {should have_link('Steam', href:'/auth/steam')}
 
 	end
 
